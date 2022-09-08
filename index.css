@@ -1,10 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
-table {
-    height: 100%;
+.works {
     width: 100%;
+    margin: auto;
     text-align: center;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    table-layout: auto;
 }
