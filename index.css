@@ -25,15 +25,6 @@
     }
 }
 
-@keyframes disappear {
-    0% {
-        opacity: 100%
-    }
-    100% {
-        opacity: 0%;
-    }
-}
-
 @keyframes navbar {
     0% {
         opacity: 1;
@@ -62,11 +53,12 @@
 }
 
 body {
+    margin: 0%;
     font-family: Roboto;
     font-weight: lighter;
     color: whitesmoke;
     background-color: rgb(53, 53, 53);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 a:link {
@@ -90,23 +82,33 @@ a:link {
   }
 
 #circleDiv {
+    margin: 0;
     background-color: rgb(53, 53, 53);
     overflow: hidden;
     font-size: 24px;
     width: 100vw;
     height: 100vh;
-    /* Setup */
     position: absolute;
 }
 
 .hidden {
-    animation-name: disappear;
-    animation-duration: .4s;
-    animation-fill-mode: forwards;
+    transition: ease-in-out;
+    transition-duration: .2s;
+    opacity: 0;
 }
 
 .hiddenNoTrans {
     opacity: 0;
+}
+
+.deleted {
+    display: none;
+}
+
+.shown {
+    transition: ease-in-out;
+    transition-duration: .2s;
+    display: block;
 }
 
 .circleRed {
@@ -166,24 +168,71 @@ a:link {
     padding: 10px;
     padding-left: 15px;
     padding-right: 15px;
-}   
+}
 
 .navbarTable td:hover {
     transition: ease-in-out;
     transition-duration: .2s;
-    outline: 1px solid red;
+    outline: 1px solid rgb(216, 38, 38);
 }
 
-.mainTable {
+.welcomeTable {
     font-weight: lighter;
     font-size: 64px;
     left: 5px;
     margin-top: 15vh;
+    margin-left: 5vw;
     width: 50%;
     height: 50vh;
     vertical-align: middle;
 }
 
+.welcomeTable td {
+    font-size: 24px;
+}
+
+.myWorks {
+    font-weight: lighter;
+    margin-top: 50vh;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    vertical-align: middle;
+    text-align: center;
+    border-spacing: 5vh;
+}
+
+.myWorks th {
+    font-size: 64px;
+    padding-bottom: 15px;
+}
+
+.worksTable {
+    width: 70vw;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 40vh;
+}
+
+.worksTable td {
+    padding: 25px;
+    width: 33%;
+}
+
+.worksImg {
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px black;
+}
+
+.githubButton {
+    background-color: rgb(216, 38, 38);
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 5px 5px 10px black;
+}
 
 .demeter {
     z-index: -1;
@@ -195,5 +244,11 @@ a:link {
     width: 55vw;
     top: calc(75% - 25vw);
     left: calc(100% - 17.5vw);
-    filter: drop-shadow(0px 0px 5px black);
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.mainDiv {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
