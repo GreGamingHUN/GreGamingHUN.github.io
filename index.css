@@ -45,20 +45,53 @@
     }
 }
 
+@keyframes mainCircle {
+    0% {
+        top: calc(75% - 10vw);
+        left: calc(100%);
+    }
+    100% {
+        top: calc(60% - 25vw);
+        left: calc(85% - 25vw);
+    }
+}
+
 * {
     margin: 0;
     /* outline: 1px solid black; */
 }
 
 body {
+    font-family: Roboto;
+    font-weight: lighter;
     color: whitesmoke;
     background-color: rgb(53, 53, 53);
+    overflow: hidden;
 }
+
+a:link {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  a:active {
+    color: whitesmoke;
+    text-decoration: none;
+  }
 
 #circleDiv {
     background-color: rgb(53, 53, 53);
     overflow: hidden;
-    font-family: arial;
     font-size: 24px;
     width: 100vw;
     height: 100vh;
@@ -116,36 +149,51 @@ body {
     animation-duration: .5s;
     animation-fill-mode: forwards;
     height: fit-content;
-    width: 100%;
-    background-color: rgb(216, 38, 38);
-    box-shadow: 0px 5px 25px black;
 }
 
 .navbarTable{
-    font-family: Roboto;
-    font-size: large;
-    height: 100%;
+    border-spacing: 15px;
     margin: auto;
-    width: fit-content;
     text-align: center;
+    max-width: 50%;
 }
 
 .navbarTable td {
     transition: ease-in-out;
     transition-duration: .2s;
-    padding: 15px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
+    outline: 1px solid transparent;
+    border-radius: 25px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}   
 
 .navbarTable td:hover {
     transition: ease-in-out;
     transition-duration: .2s;
-    background-color: rgb(253, 51, 51);
+    outline: 1px solid red;
 }
 
 .mainTable {
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
+    font-weight: lighter;
+    font-size: 64px;
+    left: 5px;
+    margin-top: 15vh;
+    width: 50%;
+    height: 50vh;
+    vertical-align: middle;
+}
+
+
+.circle {
+    z-index: -1;
+    animation-name: mainCircle;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 1;
+    position: absolute;
+    width: 55vw;
+    top: calc(75% - 25vw);
+    left: calc(100% - 17.5vw);
+    filter: drop-shadow(0px 0px 5px black);
 }

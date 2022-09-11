@@ -16,7 +16,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 
 <body>
@@ -28,12 +27,13 @@
     <nav id='navbar' class="hiddenNoTrans">
         <table class="navbarTable">
             <tr>
-                <td>
+                
+                <td onclick="switchToPage('index.html')">
                     Kezdőlap
                 </td>
-                <td>
-                    Munkáim
-                </td>
+                    <td onclick="switchToPage('works.html')">
+                        <a href="./works.html">Munkáim</a>
+                    </td>
                 <td>
                     Elérhetőség
                 </td>
@@ -44,12 +44,8 @@
         <tr>
             <th>Üdv az oldalamon!</th>
         </tr>
-        <tr>
-            <td>
-                <img src="img/asd.png" alt="minecraftxdd">
-            </td>
-        </tr>
     </table>
+    <img src="./img/IHM zigzag circle.png   " alt="fasz" id="bigCircle" class="hiddenNoTrans">
 </body>
 
 </html>
