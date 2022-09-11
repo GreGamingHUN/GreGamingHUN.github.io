@@ -185,7 +185,7 @@ a:link {
 }
 
 
-.circle {
+.demeter {
     z-index: -1;
     animation-name: mainCircle;
     animation-duration: 2s;

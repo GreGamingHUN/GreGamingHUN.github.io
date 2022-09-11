@@ -16,6 +16,6 @@ function remove() {
 
 function deletenow() {
     document.getElementById('navbar').classList.add('navbar')
-    document.getElementById('bigCircle').classList.add('circle')
+    document.getElementById('demeter').classList.add('demeter')
     circleDiv.remove()
 }
