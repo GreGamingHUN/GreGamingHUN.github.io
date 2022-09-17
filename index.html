@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" type="text/css" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <style>
+        canvas { width: fit-content; height: fit-content; margin: auto;}
+    </style>
 </head>
 
 <body>
@@ -41,7 +46,7 @@
                 </tr>
             </table>
         </nav>
-        <table class="welcomeTable">
+        <table class="welcomeTable" id="welcomeTable">
             <tr>
                 <th>Üdv az oldalamon!</th>
             </tr>
@@ -105,8 +110,109 @@
                 </td>
             </tr>
         </table>
+        <table class="threeTable">
+            <tr>
+                <th>
+                    Random spinning sphere
+                </th>
+            </tr>
+            <tr>
+                <td id="idetedd">
+
+                </td>
+            </tr>
+        </table>
         <img src="./img/IHM zigzag circle.png" alt="fasz" id="demeter" class="hiddenNoTrans">
     </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./js-r144/build/three.module.js"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        let WIDTH, HEIGHT, aspectRatio;
+        let renderer;
+        let scene, camera;
+        let geometry, material, mesh;
+
+        init();
+
+        animate();
+
+        function init() {
+            //Ablakméret és aspect ratio beállítása
+            HEIGHT = 400;
+            WIDTH = 400;
+            aspectRatio = WIDTH / HEIGHT;
+
+            //Renderer létrehozása és DOMhoz adása
+            renderer = new THREE.WebGLRenderer( { antialias: true } );
+            renderer.setSize( WIDTH, HEIGHT );
+            renderer.setClearColor( 0x353535 );
+            document.getElementById('idetedd').appendChild( renderer.domElement );
+
+            //scene creation
+            scene = new THREE.Scene();
+
+            //Kamera létrehozása
+            camera = new THREE.PerspectiveCamera( 75, aspectRatio, 0.1, 1000 );
+            camera.position.z = 15;
+            camera.lookAt( scene.position.x, scene.position.y, scene.position.z )
+
+            //3D object
+            geometry = new THREE.SphereGeometry(8, 50, 30);
+            material = new THREE.MeshBasicMaterial( { color: 0x00FF00, wireframe: true } );
+            mesh = new THREE.Mesh( geometry, material );
+            mesh.rotation.z = 0.2;
+
+            //tárgy scene-hez adása
+            scene.add( mesh );
+
+            window.addEventListener('resize', handleWindowResize, false);
+        }
+
+        function handleWindowResize() {
+            // Az ablak átméretezése esetén a kamera vetítési paraméterek újraszámolása
+            HEIGHT = window.innerHeight;
+            WIDTH = window.innerWidth;
+            // A konzolra kiírt szöveget a böngészpben is megnézhetjük:
+            // CTRL + Shift + i
+            // Console fülre kattintás
+            // A hibaüzenetek is itt láthatók (ha vannak)
+            console.log( 'WIDTH=' + WIDTH + '; HEIGHT=' + HEIGHT );
+            renderer.setSize( WIDTH, HEIGHT );
+            aspectRatio = WIDTH / HEIGHT;
+            camera.aspect = aspectRatio;
+            camera.updateProjectionMatrix();
+
+            render();
+        }
+
+        function animate() {
+            // Újabb képkocka rajzolásának kérése.
+            // Maximálisan 60 FPS-t biztosít a rendszer.
+            requestAnimationFrame( animate );
+
+            // Objektum elforgatási paraméterének módosítása
+            mesh.rotation.x += 0.01;
+            mesh.rotation.y += 0.01;
+
+            // Új képkocka rajzolása
+            render();
+        }
+
+        function render() {
+            // 3D -> 2D vetített kép kiszámítása.
+            // scene 3D színtér képe a camera kamera szemszögéből.
+            renderer.render( scene, camera );
+        }
+    </script>
 </body>
 
 </html>
