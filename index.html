@@ -10,7 +10,7 @@
 
     <script src="/script.js"></script>
     <title>
-        Retek
+        GreG
     </title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,33 +35,36 @@
                 <tr>
                     
                     <td onclick="switchToPage('index.html')">
-                        Kezdőlap
+                        Home
                     </td>
                         <td onclick="switchToPage('works.html')">
-                            <a href="./works.html">Munkáim</a>
+                            My Works
                         </td>
                     <td>
-                        Elérhetőség
+                        Contact
                     </td>
                 </tr>
             </table>
+            <div class="accountButton">
+                Login (WIP)
+            </div>
         </nav>
         <table class="welcomeTable" id="welcomeTable">
             <tr>
-                <th>Üdv az oldalamon!</th>
+                <th>Welcome to my page!</th>
             </tr>
             <tr>
                 <td>
-                    Práger Gergő egyetemi hallgató vagyok, ide pedig kell még valami catchy szöveg
+                    I am Gergő Práger, a University Student
                 </td>
             </tr>
         </table>
         <table class="myWorks">
             <tr>
-                <th>Munkáim</th>
+                <th>My Works</th>
             </tr>
             <tr>
-                <td>Itt található az összes elkészített/készülő munkám</td>
+                <td>Here are my finished/in works projects</td>
             </tr>
         </table>
         <table class="worksTable">
@@ -89,24 +92,24 @@
             </tr>
             <tr>
                 <td>
-                    A FiveM nevű GTA 5 Multiplayer modhoz kezdtem el készíteni egy nagyobb keretrendszert RolePlay játékmódhoz
+                    I'm creating a RolePlay framework from scratch for FiveM, a GTA 5 Multiplayer Mod (WIP)
                 </td>
                 <td>
-                    Ennek a weboldalnak a forráskódja
+                    This website's source code
                 </td>
                 <td>
-                    Egy Node.JS-ben készült/készülő Discord MusicBot projekt
+                    A Discord Music Bot written in Node.JS (WIP)
                 </td>
             </tr>
             <tr>
                 <td>
-                    <a href="https://github.com/GreGamingHUN/FiveM-project" class="githubButton">Github Oldal</a>
+                    <a href="https://github.com/GreGamingHUN/FiveM-project" class="githubButton">Github Page</a>
                 </td>
                 <td>
-                    <a href="https://github.com/GreGamingHUN/GreGamingHUN.github.io" class="githubButton">Github Oldal</a>
+                    <a href="https://github.com/GreGamingHUN/GreGamingHUN.github.io" class="githubButton">Github Page</a>
                 </td>
                 <td>
-                    <a href="https://github.com/GreGamingHUN/VIBEZ_Bot" class="githubButton">Github Oldal</a>
+                    <a href="https://github.com/GreGamingHUN/VIBEZ_Bot" class="githubButton">Github Page</a>
                 </td>
             </tr>
         </table>
@@ -162,7 +165,7 @@
 
             //Kamera létrehozása
             camera = new THREE.PerspectiveCamera( 75, aspectRatio, 0.1, 1000 );
-            camera.position.z = 15;
+            camera.position.z = 35;
             camera.lookAt( scene.position.x, scene.position.y, scene.position.z )
 
             //3D object

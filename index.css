@@ -42,14 +42,14 @@
         left: calc(100%);
     }
     100% {
-        top: calc(60% - 25vw);
+        top: calc(60% - 15vw);
         left: calc(85% - 25vw);
     }
 }
 
 * {
     margin: 0;
-/*     outline: 1px solid black; */
+    /* outline: 1px solid black; */
 }
 
 body {
@@ -256,4 +256,22 @@ a:link {
 .threeTable {
     width: 100vw;
     text-align: center;
+}
+
+.accountButton {
+    transition: ease-in-out;
+    transition-duration: .2s;
+    transform: translate(-45px, -58px);
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    float: right;
+}
+
+.accountButton:hover {
+    background-color: rgb(216, 38, 38);
+    box-shadow: 5px 5px 5px black;
+    transition: ease-in-out;
+    transition-duration: .2s;
 }
