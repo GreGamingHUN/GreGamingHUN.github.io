@@ -30,25 +30,27 @@
         <div id ="whiteCircle"></div>
     </div>
     <div id="mainMainDiv" class="deleted">
-        <nav id='navbar' class="hiddenNoTrans">
-            <table class="navbarTable">
-                <tr>
-                    
-                    <td onclick="switchToPage('index.html')">
-                        Home
-                    </td>
-                        <td onclick="switchToPage('works.html')">
-                            My Works
+        <div id ="navbarDiv" style="width: 100vw; height: 64px; top: 0vh">
+            <nav id='navbar' class="hiddenNoTrans">
+                <table class="navbarTable">
+                    <tr>
+                        
+                        <td>
+                            <button class="navbarButton">Home</button>
                         </td>
-                    <td>
-                        Contact
-                    </td>
-                </tr>
-            </table>
-            <div class="accountButton">
-                Login (WIP)
-            </div>
-        </nav>
+                        <td>
+                            <a href="#works"><button class="navbarButton" onclick="scrollToWorks()">My Works</button></a>
+                        </td>
+                        <td>
+                            <a href="#contact"><button class="navbarButton" onclick="scrollToContacts()"">Contact</button></a>
+                        </td>
+                    </tr>
+                </table>
+                <div class="accountButton">
+                    Login (WIP)
+                </div>
+            </nav>
+        </div>
         <table class="welcomeTable" id="welcomeTable">
             <tr>
                 <th>Welcome to my page!</th>
@@ -67,6 +69,7 @@
                 <td>Here are my finished/in works projects</td>
             </tr>
         </table>
+        
         <table class="worksTable">
             <tr>
                 <td>
@@ -113,6 +116,11 @@
                 </td>
             </tr>
         </table>
+        <table class="contact">
+            <tr>
+                <th>Contact</th>
+            </tr>
+        </table>
         <table class="threeTable">
             <tr>
                 <th>
@@ -127,6 +135,8 @@
         </table>
         <img src="./img/IHM zigzag circle.png" alt="fasz" id="demeter" class="hiddenNoTrans">
     </div>
+    <button id="scrollButton" onclick="scrollToLanding()">↑</button>
+
 
     <script type="importmap">
         {
