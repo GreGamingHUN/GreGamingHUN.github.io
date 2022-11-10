@@ -234,6 +234,10 @@ a:link {
     box-shadow: 5px 5px 10px black;
 }
 
+.githubButton:hover {
+    transform: scale(120%);
+}
+
 .demeter {
     z-index: -1;
     animation-name: mainCircle;
