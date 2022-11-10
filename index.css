@@ -277,6 +277,10 @@ a:link {
     box-shadow: 5px 5px 5px black;
 }
 
+.contactImg {
+    width: 100px;
+}
+
 .githubButton {
     background-color: rgb(216, 38, 38);
     font-weight: bold;
