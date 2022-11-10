@@ -36,15 +36,40 @@
     }
 }
 
+@keyframes navbar2 {
+    0% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-100%);
+    }
+}
+
 @keyframes mainCircle {
     0% {
         top: calc(75% - 10vw);
         left: calc(100%);
     }
     100% {
-        top: calc(60% - 25vw);
+        top: calc(60% - 15vw);
         left: calc(85% - 25vw);
     }
+}
+
+@keyframes navbarBackground {
+    0% {
+        background-color: rgb(170, 29, 29);
+        opacity: 1;
+    }
+    100% {
+        background-color: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 * {
@@ -93,8 +118,14 @@ a:link {
 
 .hidden {
     transition: ease-in-out;
-    transition-duration: .2s;
-    opacity: 0;
+    transition-duration: .1s;
+    display: none;
+}
+
+.hiddenNavBar {
+    animation-name: navbar2;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
 }
 
 .hiddenNoTrans {
@@ -153,6 +184,21 @@ a:link {
     height: fit-content;
 }
 
+.navbarBackgroundChange {
+    animation-name: navbarBackground;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+}
+
+.navbar2 {
+    background-color: rgb(170, 29, 29);
+    animation-name: navbar;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    height: fit-content;
+    box-shadow: 5px 5px 5px black;
+}
+
 .navbarTable{
     border-spacing: 15px;
     margin: auto;
@@ -180,7 +226,7 @@ a:link {
     font-weight: lighter;
     font-size: 64px;
     left: 5px;
-    margin-top: 15vh;
+    margin-top: 25vh;
     margin-left: 5vw;
     width: 50%;
     height: 50vh;
@@ -191,7 +237,7 @@ a:link {
     font-size: 24px;
 }
 
-.myWorks {
+.myWorks, .contact {
     font-weight: lighter;
     margin-top: 50vh;
     font-size: 24px;
@@ -203,16 +249,21 @@ a:link {
     border-spacing: 5vh;
 }
 
-.myWorks th {
+.contact {
+    margin-top: 10vh;
+}
+
+.myWorks th, .contact th {
     font-size: 64px;
     padding-bottom: 15px;
 }
+
 
 .worksTable {
     width: 70vw;
     text-align: center;
     margin: auto;
-    padding-bottom: 40vh;
+    padding-bottom: 20vh;
 }
 
 .worksTable td {
@@ -256,3 +307,69 @@ a:link {
     height: 100vh;
     overflow: hidden;
 }
+
+.threeTable {
+    width: 100vw;
+    text-align: center;
+}
+
+.accountButton {
+    transition: ease-in-out;
+    transition-duration: .2s;
+    transform: translate(-45px, -60px);
+    padding: 15px;
+    top: 1vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    float: right;
+}
+
+.accountButton:hover {
+    background-color: rgb(216, 38, 38);
+    box-shadow: 5px 5px 5px black;
+    transition: ease-in-out;
+    transition-duration: .2s;
+}
+
+.navbarButton {
+    font-size: 16px;
+    color: whitesmoke;
+    font-family: Roboto;
+    font-weight: lighter;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.scrollButton {
+    opacity: 1;
+    position: fixed;
+    left: 5vw;
+    top: 85vh;
+    height: 82px;
+    width: 82px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(216, 38, 38);
+    box-shadow: 5px 5px 5px black;
+    color: whitesmoke;
+    font-size: 64px;
+    font-family: Roboto;
+    padding-bottom: 15px;
+}
+
+.scrollToTop:hover {
+    transition: ease-in-out;
+    transition-duration: .2s;
+    position: fixed;
+    left: 5vw;
+    top: 85vh;
+    height: 82px;
+    width: 82px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgb(170, 29, 29);
+    box-shadow: 5px 5px 5px black;
+}
+
